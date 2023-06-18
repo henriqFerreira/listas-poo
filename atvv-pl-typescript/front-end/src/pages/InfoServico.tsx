@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import THttpResponse from "../types/THttpResponse";
 import swal from "sweetalert";
-import Produto from "../models/Produto";
 import Servico from "../models/Servico";
 
 const InfoServico: React.FC = () => {

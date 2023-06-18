@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Cliente from "../models/Cliente";
 import THttpResponse from "../types/THttpResponse";
-import { FaTrash } from "react-icons/fa";
 import swal from "sweetalert";
 import Produto from "../models/Produto";
 
@@ -117,34 +115,6 @@ const InfoProuto: React.FC = () => {
                     <button type="submit" className="col-md-3 btn btn-success">Salvar alterações</button>
                 </div>
             </form>
-            <div className="container">
-                <h2>Consumidores deste produto</h2>
-                <table className="table table-hover">
-                    <thead>
-                        <tr className="table-dark">
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Nome Social</th>
-                            <th scope="col">CPF</th>
-                            <th scope="col">Quantidade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { Array.isArray(info.clientes) && info.clientes.map((i, k) => {
-                            let filtered = i.produtosConsumidos.filter(x => x.id === info.id);
-                            return (
-                                <tr key={ k }>
-                                    <td>{ i.id }</td>
-                                    <td>{ i.nome }</td>
-                                    <td>{ i.nomeSocial }</td>
-                                    <td>{ i.cpf.valor }</td>
-                                    <td>{ filtered.length }</td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
-            </div>
         </>
     )
 }
